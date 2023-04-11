@@ -4,3 +4,9 @@
 01. Write the steps to call a Function with Argument of a class with $_GET[] data?
  
 02. How to create Class(s) to load a page if $_GET[] data is empty?
+
+03. How to create Class(s) to load a MODEL to connected DATABASE AND SHOW DATA into PAGE if $_GET[] data is empty?
+
+
+
+
