@@ -1,11 +1,41 @@
 
+00. How to MVC works to load a specific page?
 
-
-01. Write the steps to call a Function with Argument of a class with $_GET[] data?
+01. When we submit a form data what is form Action='' and where to catch Data to validate and insert?
  
 02. How to create Class(s) to load a page if $_GET[] data is empty?
 
 03. How to create Class(s) to load a MODEL to connected DATABASE AND SHOW DATA into PAGE if $_GET[] data is empty?
+
+
+===============================================================
+
+00. How to MVC works to load a specific page?
+----------------------------------------------
+LoadController
+public function views($pageName, $data=null){	
+	return include 'app/views/'.$fileName.'.php';
+}
+
+public function model($modelName){	
+	include 'app/model/'.$modelName.'.php';
+	return  new $modelName;
+}
+
+ObjController
+protected $load=array();
+ function __construct(){
+ 	$this->load= new LoadController();
+ }
+
+ Cat extends ObjController
+ function __construct(){
+ 	parent::__construct();
+ }
+ public funtion add(){
+   $this->load->views('catAdd');
+ }
+
 
 
 
