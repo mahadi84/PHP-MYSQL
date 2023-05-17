@@ -1,0 +1,134 @@
+
+
+
+HOW TO:------
+01. Show Table Details?
+02. Rename a Table Name?
+03. Rename a column Name?
+04. Add Primary Key?
+05. Drop Primary Key?
+06. Add Foreign Key?
+07. Drop Foreign Key?
+08. Add constraint Like UNIQUE/CHECK?
+09. Drop constraint Like UNIQUE/INDEX/CHECK?
+10. Add Auto-Increment?
+11. Remove Auto-Increment?
+
+============================================
+
+
+CREATE TABLE users( id INT AUTO_INCREMENT PRIMARY KEY, 
+                    	fullName VARCHAR(50) NOT NULL, 
+                    	userName VARCHAR(50) NOT NULL UNIQUE, 
+                    	userRole INT(2)
+                  );
+
+CREATE TABLE category1( id INT AUTO_INCREMENT PRIMARY KEY, 
+                       catTitle VARCHAR(50) NOT NULL UNIQUE, 
+                       catName VARCHAR(255) NOT NULL
+                     );
+
+
+CREATE TABLE posts( id INT AUTO_INCREMENT PRIMARY KEY, 
+                    postTitle VARCHAR(50) NOT NULL UNIQUE,
+                    postName VARCHAR(255) NOT NULL,
+		    userId INT(2),
+		    catId INT(2), 
+  		    CONSTRAINT fk_userId FOREIGN KEY (userId) REFERENCES users(id),
+		    CONSTRAINT fk_catId FOREIGN KEY (catId) REFERENCES category(id)
+                  );
+
+
+-------
+INSERT INTO posts( fullName, userName, userRole) VALUES
+('Muhammad Mahadi Hasan', 'mmahadi', 1),
+-------
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+-------
+DELETE FROM table_name WHERE condition;
+
+
+----------------------
+
+01. Table Details:
+------------------
+DESC Customer;
+DESCRIBE Customer;
+
+SHOW INDEX FROM tblName          *Check index(key_name/foreign key name):
+
+
+02. Rename a Table Name:
+------------------------
+ALTER TABLE OldTableName
+RENAME TO NewTableName;
+
+
+03. Rename a column Name:
+-------------------------
+ALTER TABLE tblName 
+CHANGE oldColName newColName INT(2) null;
+
+
+04. Add Primary Key:
+--------------------
+ALTER TABLE posts 
+ADD PRIMARY KEY('id');
+
+
+05. Drop Primary Key:
+---------------------
+ALTER TABLE posts 
+DROP PRIMARY KEY;
+
+
+06. Add Foreign Key:
+---------------------
+ALTER TABLE tblName
+ADD CONSTRAINT fk_user_id 
+FOREIGN KEY (tbl_col_name) REFERENCES ref_tbl(ref_tbl_col)
+
+
+07. Drop Foreign Key:
+---------------------
+ALTER TABLE posts 
+DROP FOREIGN KEY fk_user_id
+
+
+08. Add constraint Like UNIQUE/CHECK:
+--------------------------------------
+ALTER TABLE tblName
+ADD UNIQUE/INDEX ID;
+or
+ADD UNIQUE/INDEX (colName1, colName2);
+or
+ADD CONSTRAINT cat_Title UNIQUE (colName)
+or
+ADD UNIQUE constraintName(colName)
+
+
+09. Drop constraint Like UNIQUE/INDEX/CHECK:
+--------------------------------------------
+ALTER TABLE tblName
+DROP INDEX constraintName     **A UNIQUE constraint is also an INDEX.
+
+
+10. Add Auto-Increment:
+-----------------------
+ALTER TABLE posts CHANGE id id INT(11) NOT NULL AUTO_INCREMENT;
+
+
+11. Remove Auto-Increment:
+-------------------------
+ALTER TABLE posts CHANGE id id INT(11) NOT NULL;
+
+
+
+
+
+
+
+
+
