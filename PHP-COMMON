@@ -12,6 +12,15 @@ echo print_r($ar) .'</br>';
 echo var_dump($ar);
 
 
+PRINT_R  = Prints array with $key=>$value this formate. 
+Examp: Array ( [0] => a [1] => b [2] => c [3] => d ) 1
+
+VAR_DUMP = Prints array with $key=>$value formate.
+array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "d" }
+
+
+
+
 ARRAY:
 ======
 $ar1=['a'=>1,'b'=>2,'c'=>3,'d'=>3];
@@ -20,15 +29,14 @@ echo print_r($ar1) .'</br>';
 echo var_dump($ar1);
 
 
+$ar1=['a'=>1,'b'=>2,'c'=>3,'d'=>4];
+echo $ar1 .'</br>';
+echo print_r($ar1) .'</br>';
+echo var_dump($ar1);
 
 
 
 
-PRINT_R  = Prints array with $key=>$value this formate. 
-Examp: Array ( [0] => a [1] => b [2] => c [3] => d ) 1
-
-VAR_DUMP = Prints array with $key=>$value formate.
-array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "d" }
 
 
 
