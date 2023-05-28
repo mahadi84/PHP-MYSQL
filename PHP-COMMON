@@ -1,0 +1,17 @@
+
+ARRAY:
+======
+$ar=['a','b','c','d'];
+echo $ar .'</br>';
+echo print_r($ar) .'</br>';
+echo var_dump($ar);
+
+
+ARRAY:
+======
+$ar=['a','b','c','d'];
+echo $ar .'</br>';
+echo print_r($ar) .'</br>';
+echo var_dump($ar);
+
+
