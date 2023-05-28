@@ -3,23 +3,8 @@
 01. PRINT_R VS VAR_DUMP?
 
 
-
 ARRAY 01:
-======
-$ar2=['posts',['controller'=>'Home','action'=>'index']];
-echo print_r($ar2) .'</br>';
-echo var_dump($ar2);
-
-Result:
--------
-Array ( [0] => posts [1] => Array ( [controller] => Home [action] => index ) ) 1
-array(2) { [0]=> string(5) "posts" [1]=> array(2) { ["controller"]=> string(4) "Home" ["action"]=> string(5) "index" } }
-
-
-
-
-ARRAY:
-======
+=========
 $ar=['a','b','c','d'];
 echo $ar .'</br>';
 echo print_r($ar) .'</br>';
@@ -40,8 +25,22 @@ array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> str
 
 
 
-ARRAY:
-======
+ARRAY 02:
+=========
+$ar2=['posts',['controller'=>'Home','action'=>'index']];
+echo print_r($ar2) .'</br>';
+echo var_dump($ar2);
+
+Result:
+-------
+Array ( [0] => posts [1] => Array ( [controller] => Home [action] => index ) ) 1
+array(2) { [0]=> string(5) "posts" [1]=> array(2) { ["controller"]=> string(4) "Home" ["action"]=> string(5) "index" } }
+
+
+
+
+ARRAY 03:
+=========
 $ar1=['a'=>1,'b'=>2,'c'=>3,'d'=>4];
 echo print_r($ar1) .'</br>';
 echo var_dump($ar1);
