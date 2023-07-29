@@ -34,7 +34,8 @@ CREATE TABLE posts( id INT AUTO_INCREMENT PRIMARY KEY,
                     postName VARCHAR(255) NOT NULL,
 		    userId INT(2),
 		    catId INT(2), 
-  		    CONSTRAINT fk_userId FOREIGN KEY (userId) REFERENCES users(id),
+  		    CONSTRAINT fk_userId FOREIGN KEY (userId) REFERENCES users(id)
+		    ON DELETE CASCADE ON UPDATE CASCADE,
 		    CONSTRAINT fk_catId FOREIGN KEY (catId) REFERENCES category(id)
                   );
 
@@ -89,6 +90,7 @@ DROP PRIMARY KEY;
 ALTER TABLE tblName
 ADD CONSTRAINT fk_user_id 
 FOREIGN KEY (tbl_col_name) REFERENCES ref_tbl(ref_tbl_col)
+ON DELETE CASCADE ON UPDATE CASCADE,
 
 
 07. Drop Foreign Key:
