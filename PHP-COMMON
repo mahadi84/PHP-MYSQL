@@ -167,7 +167,7 @@ foreach($animals as $animal) {
 }
 ?>
 
-================================07.  What are Traits?========================================
+================================07.  What are Traits(বৈশিষ্ট্য)?========================================
 
 PHP only supports single inheritance: a child class can inherit only from one single parent.
 
