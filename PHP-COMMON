@@ -16,6 +16,9 @@
 
 
 ====================== 00 and  01 Array==================================
+Array:--- 
+Special type variable that can hold multiple data.
+
 Index:----
 $data=["Red", "Green", "Blue", "Brown"];     
 $cars[0] = "Red";
