@@ -1,6 +1,11 @@
 
 
+00. foreach vs for
 01. PRINT_R VS VAR_DUMP?
+
+02. Class vs Object.
+03. 
+
 
 
 ARRAY 01:
@@ -12,44 +17,39 @@ echo var_dump($ar);
 
 Result:
 -------
-Array
-Array ( [0] => a [1] => b [2] => c [3] => d ) 1
-array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "d" }
-
-
-PRINT_R  = Prints array with $key=>$value this formate. 
+PRINT_R  = Prints array with $key=>$value this format. 
 Examp: Array ( [0] => a [1] => b [2] => c [3] => d ) 1
 
 VAR_DUMP = Prints array with $key=>$value formate.
 array(4) { [0]=> string(1) "a" [1]=> string(1) "b" [2]=> string(1) "c" [3]=> string(1) "d" }
 
 
+================ 02. Class vs Object  ==============
+A CLASS is a template for objects, 
+An OBJECT is an instance of class.
 
-ARRAY 02:
-=========
-$ar2=['posts',['controller'=>'Home','action'=>'index']];
-echo print_r($ar2) .'</br>';
-echo var_dump($ar2);
-
-Result:
--------
-Array ( [0] => posts [1] => Array ( [controller] => Home [action] => index ) ) 1
-array(2) { [0]=> string(5) "posts" [1]=> array(2) { ["controller"]=> string(4) "Home" ["action"]=> string(5) "index" } }
-
-
-
-
-ARRAY 03:
-=========
-$ar1=['a'=>1,'b'=>2,'c'=>3,'d'=>4];
-echo print_r($ar1) .'</br>';
-echo var_dump($ar1);
-
-Result:
--------
-Array ( [a] => 1 [b] => 2 [c] => 3 [d] => 3 ) 1
-array(4) { ["a"]=> int(1) ["b"]=> int(2) ["c"]=> int(3) ["d"]=> int(3) }
-
+================ 02. Class vs Object  ==============
+A constructor allows you to initialize an object's properties upon creation of the object.
+A destructor is called when the object is destructed or the script is stopped or exited.
+Example:-----------
+<?php
+class Fruit {
+  // Properties
+  var $name;
+  var $color;
+  // Methods
+  function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color; 
+  }
+  function __destruct() {
+    echo "The fruit is {$this->name} and the color is {$this->color}."; 
+  }
+}
+$apple = new Fruit("APPLE", "RED");
+?>
+Result:-------------
+The fruit is APPLE and the color is RED.
 
 
 
