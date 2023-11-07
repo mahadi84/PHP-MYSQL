@@ -7,7 +7,7 @@
 02. Class vs Object.
 03. _Contructor() vs _Destructor().
 04. What is Access Modifiers(Public, Private, Protected)?
-05. What are Abstract(পৃথক) Classes and Methods?
+05. What are Abstract(পৃথক,অকার্যকর) Classes and Methods?
 
 06. What are Interfaces?
 07. What are Traits?
@@ -88,7 +88,7 @@ private - the property or method can ONLY be accessed within the class
       ?>
 
 
-==================== 05. What are Abstract(পৃথক) Classes and Methods? =============================
+==================== 05. What are Abstract(পৃথক,অকার্যকর) Classes and Methods? =============================
 
 Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks.
 <?php
