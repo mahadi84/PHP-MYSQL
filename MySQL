@@ -2,6 +2,7 @@
 
 
 HOW TO:------
+00. Data type in MySQL?
 01. Show Table Details?
 02. Rename a Table Name?
 03. Rename a column Name?
@@ -16,6 +17,39 @@ HOW TO:------
 
 ============================================
 
+========================== 00. Data type in MySQL? ==========================
+TEXT vs VARCHAR=
+TEXT can store bigger amounts of data up to a maximum of 4 gigabytes ( 2 3 2 − 1 2^{32}-1 232−1) characters, 
+VARCHAR can store strings of variable length up to 65,535 characters.
+
+------------
+Type	Length (In Bytes)	
+-------------------------
+TINYINT	   1	
+SMALLINT   2	
+MEDIUMINT  3	
+INT        4	
+BIGINT	   8
+-
+FLOAT	   4
+DOUBLE     8
+**The FLOAT and DOUBLE types represent approximate numeric data values.
+
+-------------
+BOOLEAN:-- it create TINYINT(1) in Table Data Type
+MySQL stores the Boolean value in the table as an integer. To demonstrate this, let’s look at the following tasks table:
+CREATE TABLE tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    completed BOOLEAN
+);
+
+--------
+ENUM:
+A string object whose value is chosen from a list of values given at the time of table creation. For example -
+CREATE TABLE length (  length ENUM('small', 'medium', 'large') ); 
+
+==================================
 
 CREATE TABLE `users` (
   `id` bigint(20) AUTO_INCREMENT PRIMARY KEY,
