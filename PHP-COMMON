@@ -1,6 +1,6 @@
 
 
-
+000. How to transfer data from one array to my Array by adding something let's say comma(,) etc?
 00. What is an array? Index vs Associateive vs Multi-Dimentional Array?
 01. $data=["Red", "Green", "Blue", "Brown"]; How will you print all data in this array?
 
@@ -12,6 +12,19 @@
 06. What are Interfaces?
 07. What are Traits?
 08. What is Namespace?
+
+
+
+========================= 000==========================
+     $allImages = [];        
+            foreach($images as $image){
+              $ext = $image->getClientOriginalExtension();
+              $randomStr= Str::random(30);
+              $imageName = $randomStr.'.'.$ext;
+              $allImages[] =  $imageName;  
+          }
+
+      return $allImages; OR   echo $allImages[0];
 
 
 
