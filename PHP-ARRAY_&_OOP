@@ -1,9 +1,13 @@
 
 
-000. How to transfer data from one array to my Array by adding something let's say comma(,) etc?
-00. What is an array? Index vs Associateive vs Multi-Dimentional Array?
+-------ARRAY:---------
+000. How to transfer data from one array to my Array by adding something let's say comma(,) etc? 
+     And How to show/get all (or only first) data of an array? FOR() vs FOREACH()?
+00. What is an array? Index vs Associateive vs Multi-Dimentional Array? 
 01. $data=["Red", "Green", "Blue", "Brown"]; How will you print all data in this array?
 
+
+--------OOP:----------
 02. Class vs Object.
 03. _Contructor() vs _Destructor().
 04. What is Access Modifiers(Public, Private, Protected)?
@@ -23,10 +27,31 @@
               $imageName = $randomStr.'.'.$ext;
               $allImages[] =  $imageName;  
           }
+      return $allImages;  
 
-      return $allImages; OR   echo $allImages[0];
+SHOW ALL DATA:-------
+foreach( $allImages as $key=>$value){
+echo $value;
+}
 
+SHOW FIRST ROW DATA ONLY:------
+echo $allImages[0];
 
+FOR() vs FOREACH()?
+FOR requires initial value, limit, and increment 
+Whereas
+FOREACH does not require any of it.
+
+$cars = array("Volvo", "BMW", "Toyota");
+$total=count($cars);
+for($i=0; $i<$total; $i++){
+	echo $cars[$i].'<br>';
+}
+
+foreach($cars as $car){
+	echo $car.'<br>';
+}
+OUTPUT: Same result FOR and FOREACH,
 
 ====================== 00 and  01 Array==================================
 Array:--- 
@@ -52,6 +77,12 @@ for ($row = 0; $row < 3; $row++) {
   }
   echo "</ul>";
 }
+
+
+
+====================================== OOP  =====================================================
+
+
 
 
 ================ 02. Class vs Object  ==============
