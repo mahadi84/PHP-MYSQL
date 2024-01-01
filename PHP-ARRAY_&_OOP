@@ -20,6 +20,29 @@
 
 
 ========================= 000==========================
+
+<?php  
+$data = [
+   "country_name" =>['BD'=>'Bangladesh', 'IND'=>'India'],
+   "currency_name" =>['BDT'=>'Bangladeshi Taka', 'INR'=>'India Rupi'],
+    ]; 
+
+?>  
+
+<br><br>
+<select name='country_name'>
+<option selected disabled> Select Country  </option>
+
+<?php
+foreach ($data as $x=>$value) {
+	if($x=="country_name"){
+      foreach ($value as $x1=>$value1) {
+          echo '<option value="'.$x1.'">'.$value1.'</option>';  
+      }
+    }
+}
+?>
+----------------
      $allImages = [];        
             foreach($images as $image){
               $ext = $image->getClientOriginalExtension();
