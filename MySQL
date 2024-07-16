@@ -1,19 +1,24 @@
 
 
+00. Data type in MySQL and C..R..U..D with RELATIONSHIP?
 
-HOW TO:------
-00. Data type in MySQL?
+
+HOW DO I:------
 01. Show Table Details?
 02. Rename a Table Name?
 03. Rename a column Name?
+
 04. Add Primary Key?
 05. Drop Primary Key?
 06. Add Foreign Key?
 07. Drop Foreign Key?
-08. Add constraint Like UNIQUE/CHECK?
-09. Drop constraint Like UNIQUE/INDEX/CHECK?
+
+08. Add constraints Like UNIQUE/CHECK.
+09. Drop constraints Like UNIQUE/INDEX/CHECK?
 10. Add Auto-Increment?
 11. Remove Auto-Increment?
+
+12.  change the data type for a column? example: timestamp to varchar.
 
 ============================================
 
@@ -173,7 +178,9 @@ ALTER TABLE posts CHANGE id id INT(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE posts CHANGE id id INT(11) NOT NULL;
 
 
-
+12.  change the data type for a column? example: timestamp to varchar.
+----------------------------------------------------------------------
+ALTER TABLE signup MODIFY dob varchar(50);
 
 
 
