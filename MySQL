@@ -51,6 +51,8 @@ CREATE TABLE length (  length ENUM('small', 'medium', 'large') );
 
 ==================================
 
+DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` bigint(20) AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(100) DEFAULT NULL,
