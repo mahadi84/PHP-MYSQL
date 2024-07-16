@@ -18,11 +18,11 @@ HOW DO I:------
 10. Add Auto-Increment?
 11. Remove Auto-Increment?
 
-12.  change the data type for a column? example: timestamp to varchar.
+12. Change the data type for a column? example: timestamp to varchar.
 
 ============================================
 
-========================== 00. Data type in MySQL? ==========================
+========================== 00. Data type in MySQL C..R..U..D with RELATIONSHIP? ==========================
 TEXT vs VARCHAR=
 TEXT can store bigger amounts of data up to a maximum of 4 gigabytes ( 2 3 2 − 1 2^{32}-1 232−1) characters, 
 VARCHAR can store strings of variable length up to 65,535 characters.
