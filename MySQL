@@ -8,7 +8,7 @@ HOW DO I:------
 02. Rename a Table Name?
 03. Rename a column Name?
 
-04. Add Primary Key?
+04. Add (a) new column and  (b)Primary Key?
 05. Drop Primary Key?
 06. Add Foreign Key?
 07. Drop Foreign Key?
@@ -124,11 +124,10 @@ ALTER TABLE tblName
 CHANGE oldColName newColName INT(2) null;
 
 
-04. Add Primary Key:
+04. Add (a)New Column and (b)Primary Key:
 --------------------
-ALTER TABLE posts 
-ADD PRIMARY KEY('id');
-
+(a) ALTER TABLE table_name ADD COLUMN column_name data_type [constraint];
+(b) ALTER TABLE posts ADD PRIMARY KEY('id');
 
 05. Drop Primary Key:
 ---------------------
