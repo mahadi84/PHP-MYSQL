@@ -1,0 +1,122 @@
+
+<?php
+class db_class{
+                const USERNAME="root";
+                const PASSWORD="";
+                const HOST="localhost";
+                const DB="ehouse";
+ 
+                private function getConnection(){
+                    $username = self::USERNAME;
+                    $password = self::PASSWORD;
+                    $host = self::HOST;
+                    $db = self::DB;
+                    try{ $connection = new PDO("mysql:dbname=$db;host=$host", $username, $password); }
+                    catch(PDOException $e) { die($e->getMessage());  }
+                  return $connection;
+                }
+ 
+                public function queryList($sql,$args){
+                    $connection = $this->getConnection();
+                    $stmt = $connection->prepare($sql);
+                    !empty($args) ? $stmt->execute($args) : $stmt->execute()
+                    or die(print_r($stmt->errorInfo(), true));
+                    return $stmt;
+                }
+    }
+ 
+//pdv =Post Data Validation
+   function pdv($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+?>
+
+
+============================ Read =======================================
+$conn= new db_class();
+    $username =pdv($_POST["username"]);
+    $password =pdv( $_POST["password"]);        
+          $sql = "SELECT *, count(*) as aa FROM users WHERE user_name='$username' AND user_pass='$password' AND user_status='1'";         
+          $stmt=$conn->queryList($sql, $args);
+           $row = $stmt->fetch(PDO::FETCH_OBJ);
+              if($num_rows==1){ }
+
+
+========================== ADD ======================================
+include 'include/db_class.php';
+$conn=new db_class();
+if (isset($_POST['Add'])){
+	$name= pdv($_POST['name']);
+	$address= pdv($_POST['address']);
+	$email= pdv($_POST['email']);
+	
+$sql="INSERT into  company (company_name, address, email) VALUES(?,?,?)";
+$args=[	$name, $address, $email];
+$stmt=$conn->queryList($sql, $args);
+
+$msg='ss';
+header("location: ehouse.php?$msg=$msg");
+} 
+
+ ?>
+
+========================================= UPDATE ============================
+
+<?php 
+include 'include/db_class.php';
+$conn=new db_class();
+if (isset($_POST['Submit'])) 
+{
+   $id= pdv($_POST['id']);
+	$name= pdv($_POST['name']);
+	$address= pdv($_POST['address']);
+	$email= pdv($_POST['email']);
+$sql="UPDATE company 
+		SET 
+		  company_name=:name, 
+			address=:address, 
+			email=:email,			
+		WHERE id=:id
+		";
+$args=[
+			':id'=>$id,
+			':name'=>$name, 
+			':address'=>$address, 
+			':email'=>$email
+     ];
+$stmt=$conn->queryList($sql, $args);
+
+
+} 
+?>
+
+
+================================= SHOW ==========================================
+$sql="SELECT * FROM company"; 
+	$stmt=$conn->queryList($sql, $args);                
+	while ($row = $stmt->fetch(PDO::FETCH_OBJ))  { 	
+  	?>
+	<tr >
+	<td>
+  <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row->id; ?>" id="getUser" class="btn btn-sm"><i class="glyphicon glyphicon-eye-open"></i> View</button>
+  </td>
+	<td style="text-align: left;"><?php echo $row->company_name; ?></td>
+	<td><?php echo $row->country; ?></td> 
+	<td><?php echo $row->current_status; ?></td>
+	<td><?php echo $row->comm_date; ?></td> 
+	<td><a data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row->id; ?>" id="editUser" > Edit</a> </td>   
+	</tr>
+    <?php } ?>  
+
+
+
+
+
+
+
+
+
+-
