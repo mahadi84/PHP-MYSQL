@@ -35,7 +35,7 @@ class db_class{
 ?>
 
 
-============================ Read =======================================
+============================ Read/Login=======================================
 $conn= new db_class();
     $username =pdv($_POST["username"]);
     $password =pdv( $_POST["password"]);        
@@ -77,9 +77,9 @@ if (isset($_POST['Submit']))
 $sql="UPDATE company 
 		SET 
 		  company_name=:name, 
-			address=:address, 
-			email=:email,			
-		WHERE id=:id
+		  address=:address, 
+		  email=:email,			
+		  WHERE id=:id
 		";
 $args=[
 			':id'=>$id,
