@@ -4,6 +4,7 @@
     B) C..R..U..D with RELATIONSHIP?
 
 HOW DO I:------
+00. Change the Database name
 01. Show Table Details?
 02. Rename a Table Name?
 03. Rename a column Name?
@@ -103,6 +104,10 @@ DELETE FROM table_name WHERE condition;
 
 
 ----------------------
+00. Change the Database name
+------------------------
+RENAME DATABASE old_database_name 
+TO new_database_name;
 
 01. Table Details:
 ------------------
