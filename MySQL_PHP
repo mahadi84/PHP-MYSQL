@@ -25,6 +25,8 @@ HOW DO I:------
 
 
 ---------------------0. MySQL Workbench----------------------
+Code and Press: Ctrl+Enter
+
 CREATE DATABASE IF NOT EXISTS my_database;  -- Creates the database if it doesn't exist
 
 USE my_database; -- Selects the database to use
@@ -32,12 +34,18 @@ USE my_database; -- Selects the database to use
 CREATE TABLE IF NOT EXISTS my_table (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    age INT,
-    email VARCHAR(255) UNIQUE
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255) NOT NULL
 );
 
 
-Press: Ctrl+Enter
+INSERT INTO user_info (name, email, password) VALUES
+('Alice Smith', 'alice.smith@example.com', 'Pubali@123'),
+('Bob Johnson', 'bob.johnson@example.com', 'Pubali@123'),
+('Charlie Brown', 'charlie.brown@example.com', 'Pubali@123'),
+('David Lee', 'david.lee@example.com', 'Pubali@123');
+
+
 
 
 
