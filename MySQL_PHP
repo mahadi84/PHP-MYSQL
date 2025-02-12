@@ -1,4 +1,4 @@
-
+0. MySQL Workbench
 
 00. A) Data type in MySQL and 
     B) C..R..U..D with RELATIONSHIP?
@@ -22,6 +22,25 @@ HOW DO I:------
 12. Change the data type for a column? example: timestamp to varchar.
 
 ============================================
+
+
+---------------------0. MySQL Workbench----------------------
+CREATE DATABASE IF NOT EXISTS my_database;  -- Creates the database if it doesn't exist
+
+USE my_database; -- Selects the database to use
+
+CREATE TABLE IF NOT EXISTS my_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT,
+    email VARCHAR(255) UNIQUE
+);
+
+
+Press: Ctrl+Enter
+
+
+
 
 ========================== 00. Data type in MySQL C..R..U..D with RELATIONSHIP? ==========================
 TEXT vs VARCHAR=
